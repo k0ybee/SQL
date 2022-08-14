@@ -1,0 +1,22 @@
+--CREATE A CANDLE STORE DATABASE
+CREATE TABLE candles ( id INTEGER, name TEXT, sold INTEGER, profit_margin_per_unit INTEGER, in_store INTEGER);
+
+INSERT into candles Values (1, "vanilla", 246, 13.64, 46);
+INSERT into candles VALUES (2, "tropical", 46, 12.79, 82);
+INSERT into candles VALUES (3, "cotton candy", 78, 23.43, 12);
+INSERT into candles VALUES (4, "mango", 3454, 32.4, 45);
+INSERT into candles VALUES (5, "marshmallow", 45, 32.32, 676);
+INSERT into candles VALUES (6, "latte", 431, 232.42, 43);
+INSERT into candles VALUES (7, "campfire", 78, 43.43, 434);
+INSERT into candles VALUES (8, "flannel", 45, 43.23, 394);
+INSERT into candles VALUES (9, "orchid", 567, 43.67, 340);
+INSERT into candles VALUES (10, "cherry popsicle", 97, 43.42, 23);
+INSERT into candles VALUES (11, "creme brulee", 3435, 3243, 2343);
+INSERT into candles VALUES (12, "lavender", 23212, 345, 23245);
+INSERT into candles VALUES (13, "peach", 3454, 56543, 34635);
+INSERT into candles VALUES (14, "smores", 3243, 3543.23, 354);
+INSERT into candles VALUES (15, "oranges", 3454, 312, 875);
+
+--DISPLAY DATA BASE ON PROFIT MARGIN 
+SELECT * FROM candles 
+order by profit_margin_per_unit desc;
