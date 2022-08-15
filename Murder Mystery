@@ -1,0 +1,58 @@
+--murder that occurred sometime on Jan.15, 2018 and that it took place in SQL City
+
+SELECT * 
+FROM crime_scene_report
+WHERE date = "20180115"
+AND city= "SQL City";
+
+--only one murder
+--Witness 1: last house on "Northwestern Dr"
+--Witness 2: Annabel, lives on "Franklin Ave"
+
+SELECT name
+FROM person
+WHERE address_street_name="Northwestern Dr"
+ORDER BY address_number desc;
+
+SELECT name
+FROM person
+WHERE address_street_name="Franklin Ave";
+
+--witness 1: Morty Schapiro
+--Witness 2: Annabel Miller
+
+--Find out what they said in the interview
+
+SELECT interview.transcript,
+person.name
+FROM interview
+JOIN person
+ON interview.person_id=person.id
+WHERE person.name= "Morty Schapiro"
+OR person.name="Annabel Miller";
+
+--"Get Fit Now Gym" bag
+--membership number on bag starting with "48Z"
+--car plate that included "H42W"
+--at the gym on Jan 9
+
+SELECT membership_id, name
+FROM get_fit_now_member as member
+JOIN get_fit_now_check_in as checkin
+ON member.id=checkin.membership_id
+WHERE checkin.check_in_date="20180109"
+AND member.membership_status="gold"
+AND checkin.membership_id LIKE "48Z%";
+
+--Suspect 1: Joe Germuska
+--Suspect 2: Jeremy Bowers
+
+--Use the car plate to determine who the murderer is
+
+SELECT name 
+FROM person
+JOIN drivers_license as dl
+ON person.license_id=dl.id
+WHERE dl.plate_number LIKE "%H42W%"
+
+--Jermery Bowers is the murderer!
