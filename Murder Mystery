@@ -55,4 +55,4 @@ JOIN drivers_license as dl
 ON person.license_id=dl.id
 WHERE dl.plate_number LIKE "%H42W%"
 
---Jermery Bowers is the murderer!
+--Jeremy Bowers is the murderer!
